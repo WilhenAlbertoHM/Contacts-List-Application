@@ -21,23 +21,27 @@ function App() {
     setContacts(data.contacts);
   }
 
+  // Function to close the modal.
   const closeModal = () => {
     setIsModalOpen(false);
     setCurrentContact({});
   }
 
+  // Function to open the create modal.
   const openCreateModal = () => {
     if (!isModalOpen) {
       setIsModalOpen(true);
     }
   }
 
+  // Function to open the edit modal.
   const openEditModal = (contact) => {
     if (isModalOpen) return;
     setCurrentContact(contact);
     setIsModalOpen(true);
   }
 
+  // Callback function to update the contact list.
   const onUpdate = () => {
     closeModal();
     fetchContacts();
